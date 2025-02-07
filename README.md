@@ -12,4 +12,4 @@ pip install -r requirements.txt
 
 ```bash
 # Example usage (replace with your specific script and arguments)
-python src/single_question.py --question "Your question here"
+python src/assistant.py --question "Your question here"
