@@ -19,6 +19,7 @@ uv sync
 ```bash
 # Example usage (replace with your specific script and arguments)
 python src/assistant.py --question "YHow long will it take a cheetah to go from Clinton, NJ to Lawrenceville, NJ"
+```
 
 Final answer: Given the detailed information provided, it does not appear that there is a specific, stated average speed 
 for a cheetah in sustained runs over long distances. Cheetahs are known for their ability to reach speeds greater than 70 
