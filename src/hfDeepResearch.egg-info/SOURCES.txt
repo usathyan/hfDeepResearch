@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/single_question.py
+src/hfDeepResearch.egg-info/PKG-INFO
+src/hfDeepResearch.egg-info/SOURCES.txt
+src/hfDeepResearch.egg-info/dependency_links.txt
+src/hfDeepResearch.egg-info/requires.txt
+src/hfDeepResearch.egg-info/top_level.txt
+src/scripts/cookies.py
+src/scripts/gaia_scorer.py
+src/scripts/mdconvert.py
+src/scripts/reformulator.py
+src/scripts/run_agents.py
+src/scripts/text_inspector_tool.py
+src/scripts/text_web_browser.py
+src/scripts/visual_qa.py

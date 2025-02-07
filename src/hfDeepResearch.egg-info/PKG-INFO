@@ -1,0 +1,60 @@
+Metadata-Version: 2.2
+Name: hfDeepResearch
+Version: 0.1.0
+Summary: A project for deep research using smolagents
+Author: User
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: anthropic>=0.37.1
+Requires-Dist: beautifulsoup4>=4.12.3
+Requires-Dist: datasets>=2.21.0
+Requires-Dist: google-search-results>=2.4.2
+Requires-Dist: huggingface_hub>=0.23.4
+Requires-Dist: mammoth>=1.8.0
+Requires-Dist: markdownify>=0.13.1
+Requires-Dist: numexpr>=2.10.1
+Requires-Dist: numpy>=2.1.2
+Requires-Dist: openai>=1.52.2
+Requires-Dist: openpyxl
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: pathvalidate>=3.2.1
+Requires-Dist: Pillow>=11.0.0
+Requires-Dist: puremagic>=1.28
+Requires-Dist: pypdf>=5.1.0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: python_pptx>=1.0.2
+Requires-Dist: Requests>=2.32.3
+Requires-Dist: tqdm>=4.66.4
+Requires-Dist: transformers>=4.46.0
+Requires-Dist: youtube_transcript_api>=0.6.2
+Requires-Dist: chess
+Requires-Dist: sympy
+Requires-Dist: pubchempy
+Requires-Dist: Bio
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: pydub
+Requires-Dist: PyPDF2
+Requires-Dist: python-pptx
+Requires-Dist: xlrd
+Requires-Dist: SpeechRecognition
+Requires-Dist: smolagents[openai]>=1.7.0
+Requires-Dist: pdfminer-six>=20240706
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
+# hfDeepResearch
+
+This project is for deep research using smolagents.
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+```bash
+# Example usage (replace with your specific script and arguments)
+python src/single_question.py --question "Your question here"
