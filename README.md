@@ -16,7 +16,7 @@ uv sync
 
 ## Usage
 
-# Example usage (replace with your specific script and arguments)
+### Example usage (replace with your specific script and arguments)
 ```bash
 python src/assistant.py --question "YHow long will it take a cheetah to go from Clinton, NJ to Lawrenceville, NJ"
 ```
@@ -32,5 +32,5 @@ Therefore, calculating a precise time for a cheetah to travel between these two 
 with the available data.
 
 
-## Note that i am using an openai key, that works for function calling. I am not happy with it yet, because the tool calling fails sometimes, GPT-4 is not the best model, and these are some of the limitations of the agentic framework.  It is not production ready.
+### Note that i am using an openai key, that works for function calling. I am not happy with it yet, because the tool calling fails sometimes, GPT-4 is not the best model, and these are some of the limitations of the agentic framework.  It is not production ready.
 
