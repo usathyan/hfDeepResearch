@@ -157,7 +157,7 @@ def answer_single_question(question: str):
     try:
         # Run agent 🚀
         final_result = agent.run(augmented_question)
-
+        output = str(final_result)
         agent_memory = agent.write_memory_to_messages(summary_mode=True)
 
     except Exception as e:
