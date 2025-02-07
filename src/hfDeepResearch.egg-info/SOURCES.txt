@@ -1,6 +1,6 @@
 README.md
 pyproject.toml
-src/single_question.py
+src/assistant.py
 src/hfDeepResearch.egg-info/PKG-INFO
 src/hfDeepResearch.egg-info/SOURCES.txt
 src/hfDeepResearch.egg-info/dependency_links.txt

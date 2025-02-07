@@ -45,7 +45,7 @@ dependencies = [
     "python-pptx",
     "xlrd",
     "SpeechRecognition",
-    "smolagents[openai]>=1.7.0",
+    "smolagents[openai] @ git+https://github.com/huggingface/smolagents.git@main",
     "pdfminer-six>=20240706",
 ]
 
