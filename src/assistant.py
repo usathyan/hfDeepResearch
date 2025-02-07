@@ -28,6 +28,7 @@ from smolagents import (
     ToolCallingAgent,
 )
 
+MODEL="openai/gpt-4-turbo-preview"
 
 AUTHORIZED_IMPORTS = [
     "requests",
@@ -54,15 +55,18 @@ AUTHORIZED_IMPORTS = [
     "datetime",
     "fractions",
     "csv",
+    "biopython",
+    "matplotlib",
+    "seaborn",
+    "plotly",
 ]
-load_dotenv(override=True)
-login(os.getenv("HF_TOKEN"))
+
+#load_dotenv(override=True)
+#login(os.getenv("HF_TOKEN"))
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-id", type=str, default="o1")
-    parser.add_argument("--api-base", type=str, default=None)
     parser.add_argument("--question", type=str, required=True)
     return parser.parse_args()
 
@@ -130,9 +134,9 @@ def create_agent_hierarchy(model: Model):
     return manager_agent
 
 
-def answer_single_question(question: str, model_id: str):
+def answer_single_question(question: str):
     model = OpenAIServerModel(
-        model_id="openai/gpt-4-turbo-preview",
+        model_id=MODEL,
         api_base="https://openrouter.ai/api/v1",  # Leave this blank to query OpenAI servers.
         api_key=os.environ["SMOL_KEY"],  # Switch to the API key for the server you're targeting.
     )
@@ -156,51 +160,19 @@ def answer_single_question(question: str, model_id: str):
 
         agent_memory = agent.write_memory_to_messages(summary_mode=True)
 
-        # Remove prepare_response and reformulation_model
-        # final_result = prepare_response(augmented_question, agent_memory, reformulation_model=model)
-
-        output = str(final_result)
-        # Remove intermediate steps
-        # for memory_step in agent.memory.steps:
-        #     memory_step.model_input_messages = None
-        # intermediate_steps = [str(step) for step in agent.memory.steps]
-
-        # Remove parsing errors, iteration limit, and agent error
-        # parsing_error = True if any(["AgentParsingError" in step for step in intermediate_steps]) else False
-        # iteration_limit_exceeded = True if "Agent stopped due to iteration limit or time limit." in output else False
-        # raised_exception = False
-
     except Exception as e:
         print("Error on ", augmented_question, e)
         output = None
-        # Remove intermediate steps
-        # intermediate_steps = []
-        # Remove parsing errors, iteration limit, and agent error
-        # parsing_error = False
-        # iteration_limit_exceeded = False
-        # exception = e
-        # raised_exception = True
+
     end_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # Remove annotated_example
-    # annotated_example = {
-    #     "agent_name": model.model_id,
-    #     "question": question,
-    #     "augmented_question": augmented_question,
-    #     "prediction": output,
-    #     "intermediate_steps": intermediate_steps,
-    #     "parsing_error": parsing_error,
-    #     "iteration_limit_exceeded": iteration_limit_exceeded,
-    #     "agent_error": str(exception) if raised_exception else None,
-    #     "start_time": start_time,
-    #     "end_time": end_time,
-    # }
+
     print(f"Answer: {output}")
 
 
 def main():
     args = parse_args()
     print(f"Starting run with arguments: {args}")
-    answer_single_question(args.question, args.model_id)
+    answer_single_question(args.question)
 
 
 if __name__ == "__main__":
