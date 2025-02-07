@@ -8,7 +8,6 @@ You will need to set these ENV variables (and therefore API keys from external m
 
 * SERPAPI_API_KEY (Get it from serpapi)
 * SMOL_KEY (openrouter.ai key - You can swap out the code to your model of choice)
-* HF_TOKEN - if downloads from hf is needed
 
 ```bash
 uv sync
