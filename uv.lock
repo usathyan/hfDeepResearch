@@ -543,16 +543,16 @@ wheels = [
 
 [[package]]
 name = "duckduckgo-search"
-version = "7.3.1"
+version = "7.3.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "lxml" },
     { name = "primp" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/45/31/2203cec2b3a5c5ee4b3b9c7feae354024d315adfad47e2eecd1df8e50fc8/duckduckgo_search-7.3.1.tar.gz", hash = "sha256:59e2430dfcd00b6701fd8e78f109879fd54c291f6a31b65023de3f7d76904d65", size = 24099 }
+sdist = { url = "https://files.pythonhosted.org/packages/d7/10/b70410e2282d6d2ef33bb0ee59183a1171932584212a529e9f4df2b38586/duckduckgo_search-7.3.2.tar.gz", hash = "sha256:bfaffad8da476deeaf10e1016691eaa724debea80b6198d63c877f2f236f8018", size = 24214 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/39/06/f47f51cd92f9adc3971deff3a97a8a036558f117b629e124c9129622c554/duckduckgo_search-7.3.1-py3-none-any.whl", hash = "sha256:09d5aa20061e1a87f8d2687aa2c58d969214149c693216146d4034899adb604a", size = 19860 },
+    { url = "https://files.pythonhosted.org/packages/50/3d/ff57423bc7fc2c6e1f3fe6205cd08b6ffecb8b293af950d221a9e522b2f9/duckduckgo_search-7.3.2-py3-none-any.whl", hash = "sha256:7133579414ac0395351fc448bb2d31546edd66a1487e39091eee4ef908fa1b81", size = 19917 },
 ]
 
 [[package]]
@@ -727,7 +727,7 @@ dependencies = [
     { name = "requests" },
     { name = "scikit-learn" },
     { name = "scipy" },
-    { name = "smolagents", extra = ["openai"] },
+    { name = "smolagents" },
     { name = "speechrecognition" },
     { name = "sympy" },
     { name = "tqdm" },
@@ -772,7 +772,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.32.3" },
     { name = "scikit-learn" },
     { name = "scipy" },
-    { name = "smolagents", extras = ["openai"], specifier = ">=1.7.0" },
+    { name = "smolagents", git = "https://github.com/huggingface/smolagents.git" },
     { name = "speechrecognition" },
     { name = "sympy" },
     { name = "tqdm", specifier = ">=4.66.4" },
@@ -2140,8 +2140,8 @@ wheels = [
 
 [[package]]
 name = "smolagents"
-version = "1.7.0"
-source = { registry = "https://pypi.org/simple" }
+version = "1.9.0.dev0"
+source = { git = "https://github.com/huggingface/smolagents.git#b6ad9a4bc6987cd4f1f7722debcf07f4482f7adc" }
 dependencies = [
     { name = "duckduckgo-search" },
     { name = "huggingface-hub" },
@@ -2152,15 +2152,6 @@ dependencies = [
     { name = "python-dotenv" },
     { name = "requests" },
     { name = "rich" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/30/db/3ac5bbff6ad4a5ff3a669446fe8cd5862d7cd1bc13054199c0c6f055e76a/smolagents-1.7.0.tar.gz", hash = "sha256:e48a0550734190a752288c408b0b8788aa7553e30d6c50dab7382657e4693a61", size = 108547 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/ab/7a5e1bb38daa3200db57b8592cd9f4692f5e96016fbd9b1813f36edb49cd/smolagents-1.7.0-py3-none-any.whl", hash = "sha256:246096f61177f45d3efd88a28270564f595f905031a19843f5234c1e94b93c01", size = 90544 },
-]
-
-[package.optional-dependencies]
-openai = [
-    { name = "openai" },
 ]
 
 [[package]]

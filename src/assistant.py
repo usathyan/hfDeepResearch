@@ -21,12 +21,28 @@ from scripts.visual_qa import visualizer
 from tqdm import tqdm
 
 from smolagents import (
-    MANAGED_AGENT_PROMPT,
     CodeAgent,
     OpenAIServerModel,
     Model,
     ToolCallingAgent,
 )
+
+MANAGED_AGENT_PROMPT = """You're a helpful agent named '{name}'.
+You have been submitted this task by your manager.
+---
+Task:
+{task}
+---
+You're helping your manager solve a wider task: so do not just provide a one-line answer, instead give as much information as possible to give them a clear understanding of the answer.
+
+Your final_answer WILL HAVE to contain these parts:
+### 1. Task outcome (short version):
+### 2. Task outcome (extremely detailed version):
+### 3. Additional context (if relevant):
+
+Put all these in your final_answer tool, everything that you do not pass as an argument to final_answer will be lost.
+And even if your task resolution is not successful, please return as much context as possible, so that your manager can act upon this feedback.
+"""
 
 MODEL="openai/gpt-4-turbo-preview"
 
@@ -117,10 +133,6 @@ def create_agent_hierarchy(model: Model):
     Your request must be a real sentence, not a google search! Like "Find me this information (...)" rather than a few keywords.
     """,
         provide_run_summary=True,
-        managed_agent_prompt=MANAGED_AGENT_PROMPT
-        + """You can navigate to .txt online files.
-    If a non-html page is in another format, especially .pdf or a Youtube video, use tool 'inspect_file_as_text' to inspect it.
-    Additionally, if after some searching you find out that you need more information to answer the question, you can use `final_answer` with your request for clarification as argument to request for more information.""",
     )
 
     manager_agent = ToolCallingAgent(

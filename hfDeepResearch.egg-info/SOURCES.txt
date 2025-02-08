@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+hfDeepResearch.egg-info/PKG-INFO
+hfDeepResearch.egg-info/SOURCES.txt
+hfDeepResearch.egg-info/dependency_links.txt
+hfDeepResearch.egg-info/requires.txt
+hfDeepResearch.egg-info/top_level.txt

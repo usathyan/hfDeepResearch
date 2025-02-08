@@ -10,6 +10,8 @@ You will need to set these ENV variables (and therefore API keys from external m
 * SMOL_KEY (openrouter.ai key - You can swap out the code to your model of choice)
 
 ```bash
+uv venv --python $(which python3.12)
+source source .venv/bin/activate
 uv sync
 ```
 
