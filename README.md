@@ -52,5 +52,8 @@ Therefore, under ideal running conditions, it would take a cheetah approximately
 Lawrenceville, NJ.
 
 
-### Note that i am using an openai key, that works for function calling. I am not happy with it yet, because the tool calling fails sometimes, GPT-4 is not the best model, and these are some of the limitations of the agentic framework.  It is not production ready.
+### Notes
+* I am using an openai models, looks like thats the only model that works with this package? None of the other tool calling models seem to work.
+* I tried several questions, and based on how this agent works, it is not an operator despite the benchmark claims.
+* It is not production ready, there are plenty of things in the code base that needs hardening/optimizations/features etc.
 
