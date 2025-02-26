@@ -233,6 +233,7 @@ class SimpleTextBrowser:
 
         web_snippets: List[str] = list()
         idx = 0
+        travel_time = None
         if "organic_results" in results:
             for page in results["organic_results"]:
                 idx += 1
@@ -253,10 +254,22 @@ class SimpleTextBrowser:
                 redacted_version = redacted_version.replace("Your browser can't play this video.", "")
                 web_snippets.append(redacted_version)
 
+                # Extract travel time information from the snippet
+                if travel_time is None:
+                    match = re.search(r"(\d+)\s+minutes", snippet, re.IGNORECASE)
+                    if match:
+                        travel_time = match.group(1) + " minutes"
+                    match = re.search(r"(\d+)\s+hours", snippet, re.IGNORECASE)
+                    if match:
+                        travel_time = match.group(1) + " hours"
+
         content = (
             f"A Google search for '{query}' found {len(web_snippets)} results:\n\n## Web Results\n"
             + "\n\n".join(web_snippets)
         )
+
+        if travel_time:
+            content += f"\n\n## Travel Time\n\nThe estimated travel time is {travel_time}."
 
         self._set_page_content(content)
 

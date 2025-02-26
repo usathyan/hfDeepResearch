@@ -46,7 +46,7 @@ dependencies = [
     "xlrd",
     "SpeechRecognition",
     "pdfminer-six>=20240706",
-    "smolagents @ git+https://github.com/huggingface/smolagents.git"
+    "smolagents @ git+https://github.com/huggingface/smolagents.git",
 ]
 
 [project.optional-dependencies]
